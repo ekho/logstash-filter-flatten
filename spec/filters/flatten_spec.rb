@@ -32,8 +32,8 @@ describe LogStash::Filters::Flatten do
       }
     CONFIG
 
-    sample("field2" => [1,2,1,2,1,2,1,2]) do
-      insist { subject.get("field2") } == [1,2,1,2,1,2,1,2]
+    sample("field2" => [1,2,1,2,1,2,1,2, "string"]) do
+      insist { subject.get("field2") } == [1,2,1,2,1,2,1,2, "string"]
     end
   end
 
